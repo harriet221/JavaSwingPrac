@@ -1,3 +1,4 @@
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,6 +20,9 @@ public class LogIn extends JFrame {
 		JLabel pswrd = new JLabel("Password : ");
 		JPasswordField txtPass = new JPasswordField(10);
 		JButton logBtn = new JButton("Log In");
+		
+		id.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		pswrd.setFont(new Font("Times New Roman", Font.BOLD, 14));
 		
 		panel.add(id);
 		panel.add(txtID);
