@@ -10,6 +10,7 @@ import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 public class LogIn extends JFrame {
+	public String pw = "";
 	public LogIn() {
 		
 		JPanel panel = new JPanel();
@@ -25,16 +26,27 @@ public class LogIn extends JFrame {
 		panel.add(txtPass);
 		panel.add(logBtn);
 		
+		char[] password = txtPass.getPassword();
+		for(char chps : password) {
+			Character.toString(chps);
+			// pw += (pw.equals("")) ? ""+chps+"" : ""+chps+"";
+			// 맞아도 틀려도 넣을거면 왜 하는 거지? ""는 왜 앞뒤로 넣을까?
+			// 값이 pw에 없으면 저장, 있으면 이어서 저장? 어케 되는 거임...
+			pw += chps; // 일단 이렇게 놓고 고민해보기
+		}
+		
 		logBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				String id = "Dan";
 				String pass = "1234";
+				int ps = 0;
+				for(int i=0; i<pw.length(); i++) {
+					if(pass.charAt(i) == pw.charAt(i))
+						ps += 1;
+				}
 				
-				if(id.equals(txtID.getText()) && pass.equals(txtPass.getText())) {
-					// JPassword에서 getText는 더이상 사용하지 않음 -> 보안상의 이유
-					// String 보다 char[]에다 getPassword를 쓰는 것이 더 좋다
-					// https://yonoo88.tistory.com/716 이렇게 해결해보기
+				if(id.equals(txtID.getText()) && ps == pw.length()) {
 					JOptionPane.showMessageDialog(null, "You have logged in successfully");
 				} else {
 					JOptionPane.showMessageDialog(null, "You failed to login");
