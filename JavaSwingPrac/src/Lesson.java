@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import java.awt.Color;
+import javax.swing.ImageIcon;
 
 public class Lesson {
 
@@ -53,8 +54,10 @@ public class Lesson {
 		startpage.setLayout(null);
 		
 		JButton btnnxt = new JButton("GO TO NEXT");
+		btnnxt.setIcon(new ImageIcon("C:\\Users\\Harriet.SJ\\Pictures\\1174469.png"));
 		btnnxt.setFont(new Font("10X10 Bold", Font.BOLD, 26));
-		btnnxt.setBounds(65, 65, 264, 392);
+		btnnxt.setBounds(65, 65, 258, 362);
+		btnnxt.setPressedIcon(new ImageIcon("C:\\Users\\Harriet.SJ\\Pictures\\poster_earth_front_a (2) 2.jpg"));
 		startpage.add(btnnxt);
 		
 		JPanel endpage = new JPanel();
@@ -64,8 +67,9 @@ public class Lesson {
 		endpage.setLayout(null);
 		
 		JButton btnbfr = new JButton("GO TO LAST");
+		btnbfr.setIcon(new ImageIcon("C:\\Users\\Harriet.SJ\\Pictures\\images.png"));
 		btnbfr.setFont(new Font("10X10 Bold", Font.BOLD, 26));
-		btnbfr.setBounds(414, 72, 258, 389);
+		btnbfr.setBounds(541, 185, 103, 146);
 		endpage.add(btnbfr);
 		
 		endpage.setVisible(false);
