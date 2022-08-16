@@ -54,7 +54,7 @@ public class Lesson {
 		startpage.setLayout(null);
 		
 		JButton btnnxt = new JButton("GO TO NEXT");
-		btnnxt.setIcon(new ImageIcon("C:\\Users\\Harriet.SJ\\Pictures\\1174469.png"));
+		btnnxt.setIcon(new ImageIcon("C:\\Users\\Harriet.SJ\\git\\JavaSwingPrac\\JavaSwingPrac\\image\\1174469.png"));
 		btnnxt.setFont(new Font("10X10 Bold", Font.BOLD, 26));
 		btnnxt.setBounds(65, 65, 258, 362);
 		btnnxt.setPressedIcon(new ImageIcon("C:\\Users\\Harriet.SJ\\Pictures\\poster_earth_front_a (2) 2.jpg"));
@@ -67,7 +67,7 @@ public class Lesson {
 		endpage.setLayout(null);
 		
 		JButton btnbfr = new JButton("GO TO LAST");
-		btnbfr.setIcon(new ImageIcon("C:\\Users\\Harriet.SJ\\Pictures\\images.png"));
+		btnbfr.setIcon(new ImageIcon("C:\\Users\\Harriet.SJ\\git\\JavaSwingPrac\\JavaSwingPrac\\image\\images.png"));
 		btnbfr.setFont(new Font("10X10 Bold", Font.BOLD, 26));
 		btnbfr.setBounds(541, 185, 103, 146);
 		endpage.add(btnbfr);
