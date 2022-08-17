@@ -1,18 +1,23 @@
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.util.Arrays;
 
 import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import java.awt.Font;
-import java.awt.Color;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
-import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPasswordField;
+import javax.swing.JTextField;
+import javax.swing.SwingConstants;
 
 public class Customer_APP {
 
@@ -92,7 +97,30 @@ public class Customer_APP {
 		loginBtn.setForeground(new Color(192, 192, 192));
 		loginBtn.setFont(new Font("KoPub돋움체 Bold", Font.PLAIN, 14));
 		loginBtn.setBackground(new Color(0, 0, 0));
+		// 엔터 누르면 버튼 눌리게 하고싶다...
 		loginBtn.setBounds(297, 228, 82, 23);
+		loginBtn.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if(idField.getText().equals("Danny")) {
+					// getPassword()는 char[] type
+					if(Arrays.equals(passwordField.getPassword(), new char[] {'1','2','3','4'})) {
+						// 혹은, "1234".toCharArray()
+						System.out.println("Welcome D");
+						welcomePanel.setVisible(false);
+						// setVisible(true);
+					}
+					else {
+						System.out.println("Your password is incorrect");
+					}
+				}
+				else {
+					System.out.println("Your id is not valid");
+				}
+				
+			}
+		});
+		
 		welcomePanel.add(loginBtn);
 		frame.setResizable(false);
 		frame.setLocationRelativeTo(null);
